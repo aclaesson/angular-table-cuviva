@@ -1,0 +1,145 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="day">
+    <th mat-header-cell *matHeaderCellDef>DAY</th>
+    <td mat-cell *matCellDef="">FRE</td>
+  </ng-container>
+
+  <!-- morning Columns -->
+  <ng-container matColumnDef="5">
+    <th mat-header-cell *matHeaderCellDef>5</th>
+    <td mat-cell *matCellDef="let time5"></td>
+  </ng-container>
+  <ng-container matColumnDef="6">
+    <th mat-header-cell *matHeaderCellDef>6</th>
+    <td mat-cell *matCellDef="let time6"></td>
+  </ng-container>
+  <ng-container matColumnDef="7">
+    <th mat-header-cell *matHeaderCellDef>7</th>
+    <td mat-cell *matCellDef="let time7"></td>
+  </ng-container>
+  <ng-container matColumnDef="8">
+    <th mat-header-cell *matHeaderCellDef>8</th>
+    <td mat-cell *matCellDef="let time8"></td>
+  </ng-container>
+  <ng-container matColumnDef="9">
+    <th mat-header-cell *matHeaderCellDef>9</th>
+    <td mat-cell *matCellDef="let time9"></td>
+  </ng-container>
+
+  <!-- afternoon Columns -->
+  <ng-container matColumnDef="10">
+    <th mat-header-cell *matHeaderCellDef>10</th>
+    <td mat-cell *matCellDef="let time10"></td>
+  </ng-container>
+  <ng-container matColumnDef="11">
+    <th mat-header-cell *matHeaderCellDef>11</th>
+    <td mat-cell *matCellDef="let time11"></td>
+  </ng-container>
+  <ng-container matColumnDef="12">
+    <th mat-header-cell *matHeaderCellDef>12</th>
+    <td mat-cell *matCellDef="let time12"></td>
+  </ng-container>
+  <ng-container matColumnDef="13">
+    <th mat-header-cell *matHeaderCellDef>13</th>
+    <td mat-cell *matCellDef="let time13"></td>
+  </ng-container>
+  <ng-container matColumnDef="14">
+    <th mat-header-cell *matHeaderCellDef>14</th>
+    <td mat-cell *matCellDef="let time10"></td>
+  </ng-container>
+
+  <!-- evening Columns -->
+  <ng-container matColumnDef="15">
+    <th mat-header-cell *matHeaderCellDef>15</th>
+    <td mat-cell *matCellDef="let time15"></td>
+  </ng-container>
+  <ng-container matColumnDef="16">
+    <th mat-header-cell *matHeaderCellDef>16</th>
+    <td mat-cell *matCellDef="let time16"></td>
+  </ng-container>
+  <ng-container matColumnDef="17">
+    <th mat-header-cell *matHeaderCellDef>17</th>
+    <td mat-cell *matCellDef="let time17"></td>
+  </ng-container>
+  <ng-container matColumnDef="18">
+    <th mat-header-cell *matHeaderCellDef>18</th>
+    <td mat-cell *matCellDef="let time18"></td>
+  </ng-container>
+  <ng-container matColumnDef="19">
+    <th mat-header-cell *matHeaderCellDef>19</th>
+    <td mat-cell *matCellDef="let time19"></td>
+  </ng-container>
+  <ng-container matColumnDef="20">
+    <th mat-header-cell *matHeaderCellDef>20</th>
+    <td mat-cell *matCellDef="let time120"></td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="symbol">
+    <th mat-header-cell *matHeaderCellDef>Symbol</th>
+    <td mat-cell *matCellDef="let element">{{element.symbol}}</td>
+  </ng-container>
+
+
+
+  <!-- Header row first group -->
+  <ng-container matColumnDef="header-row-day-group">
+    <th
+      mat-header-cell
+      *matHeaderCellDef
+      [style.text-align]="center"
+      [attr.colspan]="1"
+    ></th>
+  </ng-container>
+
+  <!-- Header row first group -->
+  <ng-container matColumnDef="header-row-morning-group">
+    <th
+      mat-header-cell
+      *matHeaderCellDef
+      [style.text-align]="center"
+      [attr.colspan]="5"
+    >
+      MORGON
+    </th>
+  </ng-container>
+
+  <!-- Header row second group -->
+  <ng-container matColumnDef="header-row-afternoon-group">
+    <th 
+      mat-header-cell 
+      *matHeaderCellDef
+      [style.text-align]="center"
+      [attr.colspan]="5"
+    >
+      EFTERMIDDAG
+    </th>
+  </ng-container>
+
+  <!-- Header row second group -->
+  <ng-container matColumnDef="header-row-evening-group">
+    <th 
+      mat-header-cell 
+      *matHeaderCellDef
+      [style.text-align]="center"
+      [attr.colspan]="5"
+    >
+      KVÄLL
+    </th>
+  </ng-container>
+
+  <tr
+    mat-header-row
+    *matHeaderRowDef="['header-row-day-group', 'header-row-morning-group', 'header-row-afternoon-group', 'header-row-evening-group']"
+  ></tr>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<!-- Copyright 2018 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->
